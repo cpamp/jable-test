@@ -1,0 +1,23 @@
+{
+  "name": "tecore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cpamp/tecore.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cpamp/tecore/issues"
+  },
+  "homepage": "https://github.com/cpamp/tecore#readme",
+  "devDependencies": {
+    "@types/node": "^7.0.29"
+  }
+}
