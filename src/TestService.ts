@@ -29,6 +29,16 @@ export class TestService {
         }
     }
 
+    private getAllPropertyNames(object: any) {
+        var props: any[] = [];
+
+        do {
+            props= props.concat(Object.getOwnPropertyNames(object));
+        } while (object = Object.getPrototypeOf(object));
+
+        return props;
+    }
+
     public test<T>(testClass: {new(...args: any[]): T}) {
         var testInstance = new testClass();
 
@@ -36,8 +46,8 @@ export class TestService {
         var message: string = '';
         var totalCount: number = 0;
         var passedCount: number = 0;
-        var methods = Object.getOwnPropertyNames(testClass.prototype);
-        for (let method of methods) {
+        var properties = this.getAllPropertyNames(testClass.prototype);
+        for (let method of properties) {
             if (method !== 'constructor' && (<any>testInstance)[method][TESTABLE]) {
                 totalCount++;
                 try {
